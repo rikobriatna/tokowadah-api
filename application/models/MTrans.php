@@ -601,6 +601,36 @@ class MTrans extends CI_Model{
 
 	}
 
+	public function getPaymentData($idTrx){
+		
+		$response = null;
+
+		$where = array(
+			"id_trx"=> $idTrx
+		);
+
+		$this->db->select('a.*, b.metode, b.logo_rek, b.no_rek, b.nama_rek');
+		$this->db->from('pembayaran a');
+		$this->db->join('metode_pembayaran b', 'a.id_metode_bayar = b.id');
+		$this->db->where($where);
+		$query = $this->db->get();
+
+		if($query->result()){
+			$response['status']=200;
+			$response['error']=false;
+			$response['message']='Success';
+			$response['data']=$query->result();
+		} else{
+			$response['status']=501;
+			$response['error']=true;
+			$response['message']='Failed get data';
+			$response['data']= '';
+		}
+
+		return $response;
+
+	}
+
 }
 
 ?>

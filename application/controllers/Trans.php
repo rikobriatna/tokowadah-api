@@ -207,6 +207,21 @@ class Trans extends REST_Controller{
 		$this->response($response);
 	}
 
+	public function getPaymentData_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MTrans->getPaymentData(
+				$this->post('idTrx')
+			);
+		}
+
+		$this->response($response);
+	}
+
 }
 
 ?>
