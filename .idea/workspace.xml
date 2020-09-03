@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Trans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Trans.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/MTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MTrans.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +74,18 @@
       <updated>1580791950198</updated>
       <workItem from="1580791952335" duration="2028000" />
       <workItem from="1582019344394" duration="2599000" />
-      <workItem from="1598449367722" duration="2960000" />
+      <workItem from="1598449367722" duration="2979000" />
+      <workItem from="1598498777563" duration="138000" />
+      <workItem from="1598531961206" duration="4252000" />
+      <workItem from="1598595435687" duration="607000" />
+      <workItem from="1598616736627" duration="814000" />
+      <workItem from="1598781839909" duration="667000" />
+      <workItem from="1598851984364" duration="808000" />
+      <workItem from="1598879513659" duration="1348000" />
+      <workItem from="1598926137829" duration="93000" />
+      <workItem from="1598971518428" duration="2170000" />
+      <workItem from="1599051194303" duration="691000" />
+      <workItem from="1599101299141" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -80,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598449524772</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="getPaymentData">
+      <created>1598459005222</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598459005222</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,16 +109,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test git first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="test git first commit" />
+    <MESSAGE value="getPaymentData" />
+    <option name="LAST_COMMIT_MESSAGE" value="getPaymentData" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1598449523739">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1598459004128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598449523739" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1598449576214">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598459004128" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1598498886064">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598449576214" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598498886064" />
   </component>
 </project>

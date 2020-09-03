@@ -609,7 +609,7 @@ class MTrans extends CI_Model{
 			"id_trx"=> $idTrx
 		);
 
-		$this->db->select('a.*, b.metode, b.logo_rek, b.no_rek, b.nama_rek');
+		$this->db->select('a.*, b.metode, b.nama_bank, b.logo_rek, b.no_rek, b.nama_rek');
 		$this->db->from('pembayaran a');
 		$this->db->join('metode_pembayaran b', 'a.id_metode_bayar = b.id');
 		$this->db->where($where);
@@ -625,6 +625,51 @@ class MTrans extends CI_Model{
 			$response['error']=true;
 			$response['message']='Failed get data';
 			$response['data']= '';
+		}
+
+		return $response;
+
+	}
+
+	public function uploadPaymentReceipt($idTrx, $base64Image){
+
+		$response = null;
+
+		if($idTrx != "" && $base64Image != ""){
+			
+			if (preg_match('/^data:image\/(\w+);base64,/', $base64Image, $type)) {
+				$data = substr($base64Image, strpos($base64Image, ',') + 1);
+				$type = strtolower($type[1]); // jpg, png, gif
+
+				if (!in_array($type, array('jpg', 'jpeg', 'gif', 'png'))) {
+					throw new \Exception('invalid image type');
+				}
+
+				$data = base64_decode($data);
+
+				if ($data === false) {
+					throw new \Exception('base64_decode failed');
+				}
+			} else {
+				throw new \Exception('did not match data URI with image data');
+			}
+
+//			file_put_contents(base_url("upload/pembayaran/".$idTrx.".{$type}"), $data);
+			if ( ! write_file("upload/pembayaran/".$idTrx.".{$type}", $data))
+			{
+				$response['status']=300;
+				$response['error']=true;
+				$response['message']='Failed upload';
+			}
+			else
+			{
+				$response['status']=200;
+				$response['error']=false;
+				$response['message']='Success upload';
+			}
+
+		} else {
+			$response =	$this->empty_response();
 		}
 
 		return $response;
