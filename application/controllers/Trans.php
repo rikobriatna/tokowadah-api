@@ -231,7 +231,10 @@ class Trans extends REST_Controller{
 		} else {
 			$response = $this->MTrans->uploadPaymentReceipt(
 				$this->post('idTrx'),
-				$this->post('base64Image')
+				$this->post('base64Image'),
+				$this->post('namaPengirim'),
+				$this->post('idBank'),
+				$this->post('noRek')
 			);
 		}
 
