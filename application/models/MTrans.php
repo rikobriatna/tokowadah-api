@@ -710,6 +710,65 @@ class MTrans extends CI_Model{
 
 	}
 
+	public function getListBank(){
+
+		$response = null;
+
+		$this->db->select('*');
+		$this->db->from('bank');
+		$query = $this->db->get();
+
+		if($query->result()){
+			$response['status']=200;
+			$response['error']=false;
+			$response['message']='Success';
+			$response['data']=$query->result();
+		} else{
+			$response['status']=501;
+			$response['error']=true;
+			$response['message']='Failed get data';
+			$response['data']= '';
+		}
+
+		return $response;
+
+	}
+
+	public function getMyOrder($userId){
+
+		$response = null;
+
+		$where = array(
+			"p.user_id"=> $userId
+		);
+
+		$this->db->select('p.id_trx, p.id_cart, p.total_item, p.total_harga, p.trx_created_date, p.trx_updated_date, p.status, count(p.id_trx) as jumlah, d.nama_produk, e.gambar, b.no_invoice');
+		$this->db->from('pesanan p');
+		$this->db->join('cart c', 'p.id_cart = c.id');
+		$this->db->join('produk d', 'c.id_produk = d.id_produk');
+		$this->db->join('detailproduk e', 'd.id_produk = e.id');
+		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx');
+		$this->db->where($where);
+		$this->db->group_by("p.id_cart");
+		$this->db->order_by("p.trx_updated_date", "DESC");
+		$query = $this->db->get();
+
+		if($query->result()){
+			$response['status']=200;
+			$response['error']=false;
+			$response['message']='Success';
+			$response['data']=$query->result();
+		} else{
+			$response['status']=501;
+			$response['error']=true;
+			$response['message']='Failed get data';
+			$response['data']= '';
+		}
+
+		return $response;
+
+	}
+
 }
 
 ?>
