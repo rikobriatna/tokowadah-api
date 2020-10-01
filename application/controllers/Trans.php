@@ -267,6 +267,19 @@ class Trans extends REST_Controller{
 		$this->response($response);
 	}
 
+	public function getDetailMyOrder_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MTrans->getDetailMyOrder($this->post('idTrx'));
+		}
+
+		$this->response($response);
+	}
+
 }
 
 ?>
