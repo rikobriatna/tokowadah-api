@@ -749,7 +749,7 @@ class MTrans extends CI_Model{
 		$this->db->join('detailproduk e', 'd.id_produk = e.id');
 		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx');
 		$this->db->where($where);
-		$this->db->group_by("p.id_cart");
+		$this->db->group_by("p.id_trx");
 		$this->db->order_by("p.trx_updated_date", "DESC");
 		$query = $this->db->get();
 
