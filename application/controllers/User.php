@@ -39,6 +39,27 @@ class User extends REST_Controller{
     $this->response($response);
 	
   }
+
+  public function register_post(){
+
+	$auth = $this->authenticate($this->post('apiKey'));
+
+	if($auth["status"] != 200){
+		$response = $auth;
+	} else {
+		$response = $this->MUser->register(
+			$this->post('userId'),
+			$this->post('email'),
+			$this->post('password'),
+			$this->post('name'),
+			$this->post('phone'),
+			$this->post('address')
+		);
+	}
+
+    $this->response($response);
+
+  }
   
 }
 

@@ -64,6 +64,63 @@ class MUser extends CI_Model{
 
   }
 
+	public function register($userId, $email, $password, $name, $phone, $address){
+
+		$response = null;
+
+		if($userId != "" && $email != "" && $password != "" && $name != ""){
+
+			$currentTime = date("Y-m-d H:i:s");
+			$password = md5($password);
+
+			$data = array(
+				'uuid' => $userId,
+				'email' => $email,
+				'password' => $password,
+				'created_at' => $currentTime
+			);
+
+			//insert into table users
+			$execute = $this->db->insert('users', $data);
+
+			if($execute){
+
+				$id = $this->db->insert_id();
+
+				$data = array(
+					'user_id' => $userId,
+					'firstname' => $name,
+					'phone' => $phone,
+					'address' => $address
+				);
+
+				//insert into table users
+				$execute = $this->db->insert('users_metadata', $data);
+
+				if($execute){
+					$response['status']=200;
+					$response['error']=false;
+					$response['message']='Data inserted';
+				} else {
+					$response['status']=502;
+					$response['error']=false;
+					$response['message']='Failed insert data';
+				}
+
+			} else{
+				$response['status']=501;
+				$response['error']=true;
+				$response['message']='Failed insert data';
+			}
+
+		} else {
+			$response =	$this->empty_response();
+		}
+
+		return $response;
+
+	}
+
 }
 
 ?>
