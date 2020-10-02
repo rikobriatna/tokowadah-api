@@ -89,7 +89,8 @@
       <workItem from="1600861742895" duration="4168000" />
       <workItem from="1601374374599" duration="2632000" />
       <workItem from="1601561324519" duration="1692000" />
-      <workItem from="1601606122208" duration="6251000" />
+      <workItem from="1601606122208" duration="6272000" />
+      <workItem from="1601626713807" duration="4312000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -147,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601612456644</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="register user">
+      <created>1601624755279</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601624755279</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,16 +170,21 @@
     <MESSAGE value="detail my order" />
     <MESSAGE value="fixing query my order" />
     <MESSAGE value="track order" />
-    <option name="LAST_COMMIT_MESSAGE" value="track order" />
+    <MESSAGE value="register user" />
+    <option name="LAST_COMMIT_MESSAGE" value="register user" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1601612454888">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1601624754132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601612454888" />
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601624754132" />
     <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1601612463339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601612463339" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1601630080388">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601630080388" />
   </component>
 </project>

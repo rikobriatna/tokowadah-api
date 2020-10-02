@@ -53,7 +53,8 @@ class User extends REST_Controller{
 			$this->post('password'),
 			$this->post('name'),
 			$this->post('phone'),
-			$this->post('address')
+			$this->post('address'),
+			$this->post('profileImage')
 		);
 	}
 
