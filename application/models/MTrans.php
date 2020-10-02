@@ -807,6 +807,37 @@ class MTrans extends CI_Model{
 
 	}
 
+	public function trackMyOrder($idTrx){
+
+		$response = null;
+
+		$where = array(
+			"o.id_trx"=> $idTrx
+		);
+
+		$this->db->select('*');
+		$this->db->from('order_tracking o');
+		$this->db->join('pengiriman p', 'o.id_pengiriman = p.id_pengiriman');
+		$this->db->where($where);
+		$this->db->order_by("o.activity_date", "ASC");
+		$query = $this->db->get();
+
+		if($query->result()){
+			$response['status']=200;
+			$response['error']=false;
+			$response['message']='Success';
+			$response['data']=$query->result();
+		} else{
+			$response['status']=501;
+			$response['error']=true;
+			$response['message']='Failed get data';
+			$response['data']= '';
+		}
+
+		return $response;
+
+	}
+
 }
 
 ?>
