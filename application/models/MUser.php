@@ -103,8 +103,8 @@ class MUser extends CI_Model
 
                 if ($execute) {
 
-                	$imgName = "";
-					$imgBgName = "profile_bg.png";
+                    $imgName = "";
+                    $imgBgName = "profile_bg.jpg";
 
                     if ($profileImg != "") {
                         if (preg_match('/^data:image\/(\w+);base64,/', $profileImg, $type)) {
@@ -132,14 +132,14 @@ class MUser extends CI_Model
                             $response['message'] = 'did not match data URI with image data';
                             throw new \Exception('did not match data URI with image data');
                         }
-                        $userId_ = str_replace("-","", $userId);
+                        $userId_ = str_replace("-", "", $userId);
                         $imgName = $userId_ . ".{$type}";
                         $path = "upload/user/" . $imgName;
 
                         write_file($path, $data);
 
                     } else {
-						$imgName = "profile.png";
+                        $imgName = "profile.png";
                     }
 
                     $data = array(
@@ -147,16 +147,16 @@ class MUser extends CI_Model
                         'image_bg' => $imgBgName
                     );
 
-					$where = array(
-						"user_id"=> $userId
-					);
+                    $where = array(
+                        "user_id" => $userId
+                    );
 
-					//update profile image
+                    //update profile image
                     $this->db->update('users_metadata', $data, $where);
 
-					$response['status'] = 200;
-					$response['error'] = false;
-					$response['message'] = 'Data inserted';
+                    $response['status'] = 200;
+                    $response['error'] = false;
+                    $response['message'] = 'Data inserted';
 
                 } else {
                     $response['status'] = 501;
@@ -177,6 +177,199 @@ class MUser extends CI_Model
 
     }
 
+    public function getUserById($userId)
+    {
+
+        if (empty($userId)) {
+
+            return $this->empty_response();
+
+        } else {
+
+            $where = array(
+                "a.uuid" => $userId
+            );
+
+            $this->db->select('*');
+            $this->db->from('users a');
+            $this->db->join('users_metadata b', 'a.uuid = b.user_id');
+            $this->db->where($where);
+            $this->db->group_by("a.uuid");
+            $query = $this->db->get();
+
+            if ($query->result()) {
+                $response['status'] = 200;
+                $response['error'] = false;
+                $response['message'] = 'Success';
+                $response['data'] = $query->result();
+            } else {
+                $response['status'] = 502;
+                $response['error'] = true;
+                $response['message'] = 'Failed';
+                $response['data'] = array();
+            }
+
+            return $response;
+
+        }
+
+    }
+
+    public function updateUser($userId, $email, $name, $phone, $address, $profileImg, $profileImgBg)
+    {
+        $response = null;
+
+        $imgName = "";
+        $imgBgName = "";
+
+        if ($profileImg != "") {
+            if (preg_match('/^data:image\/(\w+);base64,/', $profileImg, $type)) {
+                $data = substr($profileImg, strpos($profileImg, ',') + 1);
+                $type = strtolower($type[1]); // jpg, png, gif
+
+                if (!in_array($type, array('jpg', 'jpeg', 'gif', 'png'))) {
+                    $response['status'] = 303;
+                    $response['error'] = true;
+                    $response['message'] = 'invalid image type';
+                    throw new \Exception('invalid image type');
+                }
+
+                $data = base64_decode($data);
+
+                if ($data === false) {
+                    $response['status'] = 304;
+                    $response['error'] = true;
+                    $response['message'] = 'base64_decode failed';
+                    throw new \Exception('base64_decode failed');
+                }
+            } else {
+                $response['status'] = 305;
+                $response['error'] = true;
+                $response['message'] = 'did not match data URI with image data';
+                throw new \Exception('did not match data URI with image data');
+            }
+            $userId_ = str_replace("-", "", $userId);
+            $imgName = "profile_".$userId_ . ".{$type}";
+            $path = "upload/user/" . $imgName;
+
+            if ( ! write_file($path, $data)) {
+
+                $response['status']=300;
+                $response['error']=true;
+                $response['message']='Failed upload';
+            } else {
+                $data = array(
+                    'image' => $imgName
+                );
+
+                $where = array(
+                    "user_id" => $userId
+                );
+
+                //update profile image
+                $this->db->update('users_metadata', $data, $where);
+
+                $response['status'] = 200;
+                $response['error'] = false;
+                $response['message'] = 'Data updated';
+            }
+        }
+
+        if ($profileImgBg != "") {
+            if (preg_match('/^data:image\/(\w+);base64,/', $profileImgBg, $type)) {
+                $data = substr($profileImgBg, strpos($profileImgBg, ',') + 1);
+                $type = strtolower($type[1]); // jpg, png, gif
+
+                if (!in_array($type, array('jpg', 'jpeg', 'gif', 'png'))) {
+                    $response['status'] = 303;
+                    $response['error'] = true;
+                    $response['message'] = 'invalid image type';
+                    throw new \Exception('invalid image type');
+                }
+
+                $data = base64_decode($data);
+
+                if ($data === false) {
+                    $response['status'] = 304;
+                    $response['error'] = true;
+                    $response['message'] = 'base64_decode failed';
+                    throw new \Exception('base64_decode failed');
+                }
+            } else {
+                $response['status'] = 305;
+                $response['error'] = true;
+                $response['message'] = 'did not match data URI with image data';
+                throw new \Exception('did not match data URI with image data');
+            }
+            $userId_ = str_replace("-", "", $userId);
+            $imgName = "profile_bg_".$userId_ . ".{$type}";
+            $path = "upload/user/" . $imgName;
+
+            if ( ! write_file($path, $data)) {
+
+                $response['status']=300;
+                $response['error']=true;
+                $response['message']='Failed upload';
+            } else {
+                $data = array(
+                    'image_bg' => $imgName
+                );
+
+                $where = array(
+                    "user_id" => $userId
+                );
+
+                //update profile image_bg
+                $this->db->update('users_metadata', $data, $where);
+
+                $response['status'] = 200;
+                $response['error'] = false;
+                $response['message'] = 'Data updated';
+            }
+        }
+
+        if($email) {
+            //update user data
+            $data = array(
+                'email' => $email
+            );
+
+            $where = array(
+                "uuid" => $userId
+            );
+
+            //update profile image
+            $this->db->update('users', $data, $where);
+
+            $response['status'] = 200;
+            $response['error'] = false;
+            $response['message'] = 'Data updated';
+
+        }
+
+        if($name && $phone && $address){
+            //update user data
+            $data = array(
+                'firstname' => $name,
+                'phone' => $phone,
+                'address' => $address
+            );
+
+            $where = array(
+                "user_id" => $userId
+            );
+
+            //update profile image
+            $this->db->update('users_metadata', $data, $where);
+
+            $response['status'] = 200;
+            $response['error'] = false;
+            $response['message'] = 'Data updated';
+        }
+
+        return $response;
+
+    }
 }
 
 ?>

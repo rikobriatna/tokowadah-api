@@ -90,7 +90,9 @@
       <workItem from="1601374374599" duration="2632000" />
       <workItem from="1601561324519" duration="1692000" />
       <workItem from="1601606122208" duration="6272000" />
-      <workItem from="1601626713807" duration="4312000" />
+      <workItem from="1601626713807" duration="4477000" />
+      <workItem from="1601640297916" duration="1862000" />
+      <workItem from="1601677874918" duration="4248000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -155,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601624755279</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="register user upload image">
+      <created>1601631723308</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601631723309</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,20 +180,21 @@
     <MESSAGE value="fixing query my order" />
     <MESSAGE value="track order" />
     <MESSAGE value="register user" />
-    <option name="LAST_COMMIT_MESSAGE" value="register user" />
+    <MESSAGE value="register user upload image" />
+    <option name="LAST_COMMIT_MESSAGE" value="register user upload image" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1601624754132">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1601631721891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601624754132" />
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601631721891" />
     <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1601612463339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601612463339" />
-    <state x="431" y="145" key="search.everywhere.popup" timestamp="1601630080388">
+    <state x="431" y="145" width="672" height="676" key="search.everywhere.popup" timestamp="1601678419694">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601630080388" />
+    <state x="431" y="145" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601678419694" />
   </component>
 </project>

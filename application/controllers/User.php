@@ -61,6 +61,44 @@ class User extends REST_Controller{
     $this->response($response);
 
   }
+
+	public function getUserById_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MUser->getUserById(
+				$this->post('userId')
+			);
+		}
+
+		$this->response($response);
+
+	}
+
+	public function updateUser_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MUser->updateUser(
+				$this->post('userId'),
+				$this->post('email'),
+				$this->post('name'),
+				$this->post('phone'),
+				$this->post('address'),
+				$this->post('profileImage'),
+				$this->post('profileImageBg')
+			);
+		}
+
+		$this->response($response);
+
+	}
   
 }
 
