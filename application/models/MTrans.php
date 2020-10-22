@@ -788,8 +788,11 @@ class MTrans extends CI_Model{
 		$this->db->join('produk d', 'c.id_produk = d.id_produk');
 		$this->db->join('detailproduk e', 'd.id_produk = e.id');
 		$this->db->where($where);
+		$this->db->group_by("p.id_trx");
 		$this->db->order_by("p.trx_updated_date", "DESC");
 		$query = $this->db->get();
+
+//		print_r($this->db->last_query());
 
 		if($query->result()){
 			$response['status']=200;
@@ -835,6 +838,34 @@ class MTrans extends CI_Model{
 		}
 
 		return $response;
+
+	}
+
+	public function getInvoice($idTrx){
+
+		$where = array(
+			"p.id_trx"=> $idTrx
+		);
+
+		$this->db->select('p.*, d.id_produk, d.nama_produk, e.berat, e.gambar, c.jml, c.harga, c.total as subtotal_harga, m.metode, 
+								b.nominal_bayar, b.no_invoice, b.file_invoice, b.payment_updated_date as tgl_bayar,
+								u.firstname, u.lastname, u.phone, u.address, n.nama_pengirim, n.no_resi, n.ongkir, n.durasi');
+		$this->db->from('pesanan p');
+		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx');
+		$this->db->join('metode_pembayaran m', 'b.id_metode_bayar = m.id');
+		$this->db->join('pengiriman n', 'p.id_pengiriman = n.id_pengiriman');
+		$this->db->join('users_metadata u', 'p.user_id = u.user_id');
+		$this->db->join('cart c', 'p.id_cart = c.id');
+		$this->db->join('produk d', 'c.id_produk = d.id_produk');
+		$this->db->join('detailproduk e', 'd.id_produk = e.id');
+		$this->db->where($where);
+		$this->db->group_by("p.id_trx");
+		$this->db->order_by("p.trx_updated_date", "DESC");
+		$query = $this->db->get();
+
+//		print_r($this->db->last_query());
+
+		return $query->result();
 
 	}
 

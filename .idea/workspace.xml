@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
+    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="edit user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/MUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/MTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MTrans.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/controllers" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -92,7 +92,10 @@
       <workItem from="1601606122208" duration="6272000" />
       <workItem from="1601626713807" duration="4477000" />
       <workItem from="1601640297916" duration="1862000" />
-      <workItem from="1601677874918" duration="4248000" />
+      <workItem from="1601677874918" duration="6887000" />
+      <workItem from="1601797647536" duration="79000" />
+      <workItem from="1601819994668" duration="4585000" />
+      <workItem from="1603354970623" duration="9729000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -164,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601631723309</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="edit user">
+      <created>1601689823759</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601689823760</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,20 +191,21 @@
     <MESSAGE value="track order" />
     <MESSAGE value="register user" />
     <MESSAGE value="register user upload image" />
-    <option name="LAST_COMMIT_MESSAGE" value="register user upload image" />
+    <MESSAGE value="edit user" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit user" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1601631721891">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1601698035792">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601631721891" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1601612463339">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601698035792" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1601692185403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601612463339" />
-    <state x="431" y="145" width="672" height="676" key="search.everywhere.popup" timestamp="1601678419694">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601692185403" />
+    <state x="431" y="145" width="672" height="676" key="search.everywhere.popup" timestamp="1603363948601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601678419694" />
+    <state x="431" y="145" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603363948601" />
   </component>
 </project>
