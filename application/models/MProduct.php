@@ -192,6 +192,45 @@ class MProduct extends CI_Model{
 
   }
 
+
+	public function getProductSearch($txt){
+
+		if(empty($txt)){
+
+			return $this->empty_response();
+
+		} else{
+
+			$txt = strtolower($txt);
+
+			$response = null;
+			$where = array(
+				"LOWER(a.nama_produk)"=>$txt,
+				"b.active"=> "0"
+			);
+
+			$this->db->select('a.id_produk, a.nama_produk, b.harga, b.harga_diskon, b.gambar, c.nama_kategori');
+			$this->db->from('produk a');
+			$this->db->join('detailproduk b', 'a.id_produk = b.id_produk');
+			$this->db->join('kategori c', 'a.id_kategori = c.id_kategori');
+			$this->db->like($where);
+			$query = $this->db->get();
+
+			if($query->result()){
+				$response['status']=200;
+				$response['error']=false;
+				$response['product']=$query->result();
+			} else{
+				$response['status']=501;
+				$response['error']=true;
+				$response['message']='Failed get product';
+			}
+
+			return $response;
+		}
+
+	}
+
 }
 
 ?>
