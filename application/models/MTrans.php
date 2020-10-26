@@ -690,7 +690,14 @@ class MTrans extends CI_Model{
 					'no_rek_bayar' => $noRek
 				);
 
+				$data_pesan = array(
+					'status' => "3"
+				);
+
 				$execute = $this->db->update('pembayaran', $data, $where);
+
+				$execute = $this->db->update('pesanan', $data_pesan, $where);
+
 				if($execute){
 					$response['status']=200;
 					$response['error']=false;
