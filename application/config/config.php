@@ -24,8 +24,8 @@ date_default_timezone_set("Asia/Jakarta");
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://localhost/tokowadah-api/';
-$config['base_url'] = 'https://9797bfe7c932.ngrok.io/tokowadah-api/';
+$config['base_url'] = 'https://api.tokowadah.com/';
+//$config['base_url'] = 'https://9797bfe7c932.ngrok.io/tokowadah-api/';
 //$config['base_url'] = '';
 
 /*
