@@ -422,6 +422,7 @@ class MTrans extends CI_Model{
 						'total_item' => $totalItem,
 						'total_harga' => $totalHarga,
 						'total_harga_before' => $totalHargaBefore,
+						'total_diskon' => $totalDiskon,
 						'trx_created_date' => $currentTime,
 						'status' => '0'
 					);
