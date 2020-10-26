@@ -392,11 +392,11 @@ class MTrans extends CI_Model{
 	}
 
 	
-	public function insertOrder($idCart, $userId, $totalItem, $totalHarga, $idVoucherTrx, $totalDiskon){
+	public function insertOrder($idCart, $userId, $totalItem, $totalHargaBefore, $totalHarga, $idVoucherTrx, $totalDiskon){
 	
 		$response = null;
 		
-		if($idCart != "" && $userId != "" && $totalItem != "" && $totalHarga != ""){
+		if($idCart != "" && $userId != "" && $totalItem != "" && $totalHargaBefore != "" && $totalHarga != ""){
 			
 			$currentTime = date("Y-m-d	H:i:s");
 			
@@ -421,7 +421,7 @@ class MTrans extends CI_Model{
 						'id_voucher_trx' => $idVoucherTrx,
 						'total_item' => $totalItem,
 						'total_harga' => $totalHarga,
-						'total_diskon' => $totalDiskon,
+						'total_harga_before' => $totalHargaBefore,
 						'trx_created_date' => $currentTime,
 						'status' => '0'
 					);

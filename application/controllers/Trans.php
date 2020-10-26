@@ -153,6 +153,7 @@ class Trans extends REST_Controller{
 				$this->post('idCart'),
 				$this->post('userId'),
 				$this->post('totalItem'),
+				$this->post('totalHargaBefore'),
 				$this->post('totalHarga'),
 				$this->post('idVoucherTrx'),
 				$this->post('totalDiskon')

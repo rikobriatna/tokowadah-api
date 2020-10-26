@@ -94,6 +94,7 @@ class MUser extends CI_Model
                 $data = array(
                     'user_id' => $userId,
                     'firstname' => $name,
+                    'lastname' => '',
                     'phone' => $phone,
                     'address' => $address
                 );

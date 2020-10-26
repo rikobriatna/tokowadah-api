@@ -12,13 +12,15 @@ class Utils extends CI_Controller {
 
         $from_email = "info@tokowadah.com";
         $to_email = "rikobriatna01@gmail.com";
+        $user = "info@tokowadah.com";
+        $pass = "tokowadah01";
 
         $config = Array(
             'protocol' => 'smtp',
             'smtp_host' => 'mail.tokowadah.com',
             'smtp_port' => 465,
-            'smtp_user' => 'info@tokowadah.com',
-            'smtp_pass' => 'tokowadah01',
+            'smtp_user' => $user,
+            'smtp_pass' => $pass,
             'mailtype'  => 'html',
             'charset'   => 'iso-8859-1'
         );
