@@ -462,9 +462,9 @@ class MTrans extends CI_Model{
 				
 			$this->db->select('a.*, b.id_produk, b.jml, b.harga, b.total, c.nama_produk, d.gambar as gambar_produk');
 			$this->db->from('pesanan a');
-			$this->db->join('cart b', 'a.id_cart = b.id');
-			$this->db->join('produk c', 'b.id_produk = c.id_produk');
-			$this->db->join('detailproduk d', 'c.id_produk = d.id_produk');
+			$this->db->join('cart b', 'a.id_cart = b.id', 'left');
+			$this->db->join('produk c', 'b.id_produk = c.id_produk', 'left');
+			$this->db->join('detailproduk d', 'c.id_produk = d.id_produk', 'left');
 			$this->db->where($where);
 			$query = $this->db->get();
 			
@@ -611,7 +611,7 @@ class MTrans extends CI_Model{
 
 		$this->db->select('a.*, b.metode, b.id_bank, b.logo_rek, b.no_rek, b.nama_rek');
 		$this->db->from('pembayaran a');
-		$this->db->join('metode_pembayaran b', 'a.id_metode_bayar = b.id');
+		$this->db->join('metode_pembayaran b', 'a.id_metode_bayar = b.id', 'left');
 		$this->db->where($where);
 		$query = $this->db->get();
 
@@ -744,14 +744,16 @@ class MTrans extends CI_Model{
 
 		$this->db->select('p.id_trx, p.id_cart, p.total_item, p.total_harga, p.trx_created_date, p.trx_updated_date, p.status, count(p.id_trx) as jumlah, d.nama_produk, e.gambar, b.no_invoice');
 		$this->db->from('pesanan p');
-		$this->db->join('cart c', 'p.id_cart = c.id');
-		$this->db->join('produk d', 'c.id_produk = d.id_produk');
-		$this->db->join('detailproduk e', 'd.id_produk = e.id');
-		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx');
+		$this->db->join('cart c', 'p.id_cart = c.id', 'left');
+		$this->db->join('produk d', 'c.id_produk = d.id_produk', 'left');
+		$this->db->join('detailproduk e', 'd.id_produk = e.id', 'left');
+		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx', 'left');
 		$this->db->where($where);
 		$this->db->group_by("p.id_trx");
 		$this->db->order_by("p.trx_updated_date", "DESC");
 		$query = $this->db->get();
+
+//		print_r($this->db->last_query());
 
 		if($query->result()){
 			$response['status']=200;
@@ -780,13 +782,13 @@ class MTrans extends CI_Model{
 		$this->db->select('p.*, d.id_produk, d.nama_produk, e.gambar, c.jml, c.harga, m.metode, b.nominal_bayar, b.no_invoice, b.file_invoice,
 				u.firstname, u.lastname, u.phone, u.address, n.nama_pengirim, n.no_resi, n.ongkir, n.durasi');
 		$this->db->from('pesanan p');
-		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx');
-		$this->db->join('metode_pembayaran m', 'b.id_metode_bayar = m.id');
-		$this->db->join('pengiriman n', 'p.id_pengiriman = n.id_pengiriman');
-		$this->db->join('users_metadata u', 'p.user_id = u.user_id');
-		$this->db->join('cart c', 'p.id_cart = c.id');
-		$this->db->join('produk d', 'c.id_produk = d.id_produk');
-		$this->db->join('detailproduk e', 'd.id_produk = e.id');
+		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx', 'left');
+		$this->db->join('metode_pembayaran m', 'b.id_metode_bayar = m.id', 'left');
+		$this->db->join('pengiriman n', 'p.id_pengiriman = n.id_pengiriman', 'left');
+		$this->db->join('users_metadata u', 'p.user_id = u.user_id', 'left');
+		$this->db->join('cart c', 'p.id_cart = c.id', 'left');
+		$this->db->join('produk d', 'c.id_produk = d.id_produk', 'left');
+		$this->db->join('detailproduk e', 'd.id_produk = e.id', 'left');
 		$this->db->where($where);
 		$this->db->group_by("p.id_trx");
 		$this->db->order_by("p.trx_updated_date", "DESC");
@@ -820,7 +822,7 @@ class MTrans extends CI_Model{
 
 		$this->db->select('*');
 		$this->db->from('order_tracking o');
-		$this->db->join('pengiriman p', 'o.id_pengiriman = p.id_pengiriman');
+		$this->db->join('pengiriman p', 'o.id_pengiriman = p.id_pengiriman', 'left');
 		$this->db->where($where);
 		$this->db->order_by("o.activity_date", "ASC");
 		$query = $this->db->get();
@@ -851,13 +853,13 @@ class MTrans extends CI_Model{
 								b.nominal_bayar, b.no_invoice, b.file_invoice, b.payment_updated_date as tgl_bayar,
 								u.firstname, u.lastname, u.phone, u.address, n.nama_pengirim, n.no_resi, n.ongkir, n.durasi');
 		$this->db->from('pesanan p');
-		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx');
-		$this->db->join('metode_pembayaran m', 'b.id_metode_bayar = m.id');
-		$this->db->join('pengiriman n', 'p.id_pengiriman = n.id_pengiriman');
-		$this->db->join('users_metadata u', 'p.user_id = u.user_id');
-		$this->db->join('cart c', 'p.id_cart = c.id');
-		$this->db->join('produk d', 'c.id_produk = d.id_produk');
-		$this->db->join('detailproduk e', 'd.id_produk = e.id');
+		$this->db->join('pembayaran b', 'p.id_trx = b.id_trx', 'left');
+		$this->db->join('metode_pembayaran m', 'b.id_metode_bayar = m.id', 'left');
+		$this->db->join('pengiriman n', 'p.id_pengiriman = n.id_pengiriman', 'left');
+		$this->db->join('users_metadata u', 'p.user_id = u.user_id', 'left');
+		$this->db->join('cart c', 'p.id_cart = c.id', 'left');
+		$this->db->join('produk d', 'c.id_produk = d.id_produk', 'left');
+		$this->db->join('detailproduk e', 'd.id_produk = e.id', 'left');
 		$this->db->where($where);
 		$this->db->group_by("p.id_trx");
 		$this->db->order_by("p.trx_updated_date", "DESC");
