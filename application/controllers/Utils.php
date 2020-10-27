@@ -19,45 +19,14 @@ class Utils extends CI_Controller
         $to = "rikobriatna01@gmail.com";
         $subject = "Checking PHP mail";
         $message = $msg;
-        $headers = "From:" . $from;
+//        $headers = "From:" . $from;
+        // Always set content-type when sending HTML email
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+// More headers
+        $headers .= 'From: <info@tokowadah.com>' . "\r\n";
         mail($to, $subject, $message, $headers);
         echo "Pesan email sudah terkirim.";
-
-    }
-
-    public function htmlmail()
-    {
-
-        $config = Array(
-            'protocol' => 'sendmail',
-            'smtp_host' => 'mail.tokowadah.com',
-            'smtp_port' => 25,
-            'smtp_user' => 'info@tokowadah.com',
-            'smtp_pass' => 'tokowadah01',
-            'smtp_timeout' => '4',
-            'mailtype' => 'html',
-            'charset' => 'iso-8859-1'
-
-        );
-
-        $this->load->library('email', $config);
-
-        $this->email->set_newline("\r\n");
-
-
-        $this->email->from('info@tokowadah.com', 'Tokowadah.com');
-
-        $this->email->to("rikobriatna01@gmail.com"); // replace it with receiver mail id
-
-        $this->email->subject("Test Email"); // replace it with relevant subject
-
-
-        $result['data'] = $this->MTrans->getInvoice("2");
-        $body = $this->load->view('notif/v_belum_bayar', $result, TRUE);
-
-        $this->email->message($body);
-
-        $this->email->send();
 
     }
 }
