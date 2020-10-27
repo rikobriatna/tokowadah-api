@@ -428,6 +428,16 @@ class MTrans extends CI_Model{
 					);
 					
 					$execute = $this->db->insert('pesanan', $data);
+
+					//insert order tracking
+					$data = array(
+						'id_trx' => $idTrx,
+						'id_pengiriman' => '0',
+						'activity' => 'Pesanan dibuat',
+						'activity_date' => $currentTime
+					);
+
+					$execute = $this->db->insert('order_tracking', $data);
 			
 				}
 			}
