@@ -954,7 +954,7 @@ class MTrans extends CI_Model
 
         $this->db->select('no_invoice');
         $this->db->from('pembayaran');
-		$this->db->order_by("payment_updated_date", "DESC");
+		$this->db->order_by("no_invoice", "DESC");
 		$this->db->limit(1);
         $query = $this->db->get();
         $results = $query->result();
