@@ -955,6 +955,8 @@ class MTrans extends CI_Model
         $results = $query->result();
         $resultsArray = $query->result_array();
 
+//        var_dump($results);
+
         if ($results) {
 
             foreach ($resultsArray as $result) {
@@ -962,11 +964,12 @@ class MTrans extends CI_Model
             }
         }
 
-		$arrInv = explode("-", $_noInv);
+		$arrInv = explode("/", $_noInv);
+
         $noInv = $arrInv[0];
         $noInv = $noInv + 1;
 
-        $noInvoice = $noInv + $arrInv[1] + $arrInv[2] + date("Y");
+        $noInvoice = $noInv."/".$arrInv[1]."/".$arrInv[2]."/".date("Y");
 
         return $noInvoice;
 
