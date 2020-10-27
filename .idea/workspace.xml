@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utils.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +100,7 @@
       <workItem from="1603502295632" duration="1613000" />
       <workItem from="1603700380831" duration="16935000" />
       <workItem from="1603774915687" duration="4348000" />
-      <workItem from="1603784601248" duration="4578000" />
+      <workItem from="1603784601248" duration="5121000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -285,14 +284,27 @@
       <option name="project" value="LOCAL" />
       <updated>1603789652049</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="test html send email">
+      <created>1603793622885</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1603793622885</updated>
+    </task>
+    <task id="LOCAL-00028" summary="test html send email">
+      <created>1603793721378</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1603793721378</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test git first commit" />
     <MESSAGE value="getPaymentData" />
     <MESSAGE value="upload payment receipt" />
     <MESSAGE value="upload payment receipt update db" />
@@ -317,21 +329,22 @@
     <MESSAGE value="generateNoInvoice order by no_invoice" />
     <MESSAGE value="add imel.php for testing email" />
     <MESSAGE value="add sendEmail native function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sendEmail native function" />
+    <MESSAGE value="test html send email" />
+    <option name="LAST_COMMIT_MESSAGE" value="test html send email" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603702491351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1603793621487">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1603794164662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603793621487" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1603793624584">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603794164662" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1603793722847">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603793624584" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603793722847" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1603777743192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -346,7 +359,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/controllers/Utils.php</url>
-          <line>15</line>
+          <line>18</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
