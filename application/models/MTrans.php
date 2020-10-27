@@ -897,7 +897,7 @@ class MTrans extends CI_Model
         $this->db->from('order_tracking o');
         $this->db->join('pengiriman p', 'o.id_pengiriman = p.id_pengiriman', 'left');
         $this->db->where($where);
-        $this->db->order_by("o.activity_date", "ASC");
+        $this->db->order_by("o.activity_date", "DESC");
         $query = $this->db->get();
 
         if ($query->result()) {
