@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Trans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Trans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/MTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MTrans.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,7 @@
       <workItem from="1603354970623" duration="13421000" />
       <workItem from="1603502295632" duration="1613000" />
       <workItem from="1603700380831" duration="16935000" />
-      <workItem from="1603774915687" duration="2691000" />
+      <workItem from="1603774915687" duration="3250000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -240,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603776882173</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixing generate no_invoice">
+      <created>1603777786668</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1603777786668</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,21 +272,22 @@
     <MESSAGE value="add update status pesanan setelah upload receipt" />
     <MESSAGE value="insert order add order tracking" />
     <MESSAGE value="generate no_invoice, add order tracking" />
-    <option name="LAST_COMMIT_MESSAGE" value="generate no_invoice, add order tracking" />
+    <MESSAGE value="fixing generate no_invoice" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing generate no_invoice" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603702491351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1603776881102">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1603778324664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603776881102" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1603776883935">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603778324664" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1603777788133">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603776883935" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603777788133" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1603777743192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

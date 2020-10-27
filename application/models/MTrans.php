@@ -732,8 +732,6 @@ class MTrans extends CI_Model
 
                 $execute = $this->db->update('pesanan', $data_pesan, $where);
 
-				$this->generateNoInvoice();
-
                 //insert order tracking
                 $data = array(
                     'id_trx' => $idTrx,
@@ -753,6 +751,13 @@ class MTrans extends CI_Model
                 );
 
                 $execute = $this->db->insert('order_tracking', $data);
+
+                //update no_invoice
+				$noInvoice = $this->generateNoInvoice();
+				$data = array(
+					"no_invoice" => $noInvoice
+				);
+				$execute = $this->db->update('pembayaran', $data, $where);
 
                 if ($execute) {
                     $response['status'] = 200;
@@ -954,8 +959,7 @@ class MTrans extends CI_Model
         $query = $this->db->get();
         $results = $query->result();
         $resultsArray = $query->result_array();
-
-//        var_dump($results);
+		$_noInv = "";
 
         if ($results) {
 
@@ -963,6 +967,10 @@ class MTrans extends CI_Model
                 $_noInv = $result['no_invoice'];
             }
         }
+
+        if($_noInv == ""){
+        	$_noInv = "0/INV-TN/II/2020";
+		}
 
 		$arrInv = explode("/", $_noInv);
 
