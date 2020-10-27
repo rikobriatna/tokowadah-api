@@ -11,7 +11,7 @@ class Utils extends CI_Controller {
 
     public function kirimEmail(){
         $result['data']=$this->MTrans->getInvoice("2");
-        $msg = $this->load->view('notif/v_belum_bayar', $result);
+        $msg = $this->load->view('notif/v_belum_bayar', $result, TRUE);
         $from = "info@tokowadah.com";
         $to = "rikobriatna01@gmail.com";
         $subject = "Checking PHP mail";
