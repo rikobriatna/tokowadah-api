@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/product/diesel_engine/D722/1_kecil_sekali.PNG" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +103,7 @@
       <workItem from="1603700380831" duration="16935000" />
       <workItem from="1603774915687" duration="4348000" />
       <workItem from="1603784601248" duration="8760000" />
-      <workItem from="1603884341704" duration="741000" />
+      <workItem from="1603884341704" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -328,14 +329,20 @@
       <option name="project" value="LOCAL" />
       <updated>1603884466705</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="add thumbnail image diesel engine D722">
+      <created>1603885138437</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1603885138437</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="my order" />
     <MESSAGE value="detail my order" />
     <MESSAGE value="fixing query my order" />
     <MESSAGE value="track order" />
@@ -360,21 +367,22 @@
     <MESSAGE value="html email" />
     <MESSAGE value="kirim email" />
     <MESSAGE value="modify image diesel engine D722" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify image diesel engine D722" />
+    <MESSAGE value="add thumbnail image diesel engine D722" />
+    <option name="LAST_COMMIT_MESSAGE" value="add thumbnail image diesel engine D722" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603702491351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1603884465418">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1603885137415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603884465418" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1603884469205">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603885137415" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1603885140515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603884469205" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603885140515" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1603777743192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
