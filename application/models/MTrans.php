@@ -1031,6 +1031,45 @@ class MTrans extends CI_Model
 
     }
 
+    public function getIdTrxByUser($name, $date){
+
+        if(empty($name) || empty($date) ){
+
+            return $this->empty_response();
+
+        } else{
+
+            $name = strtolower($name);
+
+            $response = null;
+            $where = array(
+                "LOWER(b.firstname)" => $name,
+                "a.trx_created_date" => $date
+            );
+
+            $this->db->select('a.id_trx, a.trx_created_date as trx_date, b.firstname as customer_name, b.phone, b.address, d.nama_produk');
+            $this->db->from('pesanan a');
+            $this->db->join('users_metadata b', 'a.user_id = b.user_id', 'left');
+            $this->db->join('cart c', 'a.id_cart = c.id', 'left');
+            $this->db->join('produk d', 'c.id_produk = d.id_produk', 'left');
+            $this->db->like($where);
+            $query = $this->db->get();
+
+            if($query->result()){
+                $response['status']=200;
+                $response['error']=false;
+                $response['data']=$query->result();
+            } else{
+                $response['status']=501;
+                $response['error']=true;
+                $response['data']='Failed get data';
+            }
+
+            return $response;
+        }
+
+    }
+
 }
 
 ?>
