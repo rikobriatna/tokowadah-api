@@ -105,7 +105,7 @@
       <workItem from="1603774915687" duration="4348000" />
       <workItem from="1603784601248" duration="8760000" />
       <workItem from="1603884341704" duration="4583000" />
-      <workItem from="1604111514356" duration="2261000" />
+      <workItem from="1604111514356" duration="2783000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -366,14 +366,20 @@
       <option name="project" value="LOCAL" />
       <updated>1604113326844</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="add api get id trx by user">
+      <created>1604113944703</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1604113944703</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing query my order" />
     <MESSAGE value="track order" />
     <MESSAGE value="register user" />
     <MESSAGE value="register user upload image" />
@@ -398,21 +404,22 @@
     <MESSAGE value="modify image diesel engine D722" />
     <MESSAGE value="add thumbnail image diesel engine D722" />
     <MESSAGE value="add update pengiriman api" />
-    <option name="LAST_COMMIT_MESSAGE" value="add update pengiriman api" />
+    <MESSAGE value="add api get id trx by user" />
+    <option name="LAST_COMMIT_MESSAGE" value="add api get id trx by user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603702491351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1604113325659">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1604113943805">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604113325659" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1604113328765">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604113943805" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1604113945931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604113328765" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604113945931" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1603777743192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

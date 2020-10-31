@@ -327,16 +327,33 @@ class Trans extends REST_Controller{
 		$this->response($response);
 	}
 
-	public function getIdTrxByUser_post(){
+	public function getTrxByUser_post(){
 
 		$auth = $this->authenticate($this->post('apiKey'));
 
 		if($auth["status"] != 200){
 			$response = $auth;
 		} else {
-			$response = $this->MTrans->getIdTrxByUser(
+			$response = $this->MTrans->getTrxByUser(
 				$this->post('name'),
 				$this->post('date')
+			);
+		}
+
+		$this->response($response);
+	}
+
+	public function updateOrderTrack_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MTrans->updateOrderTrack(
+				$this->post('idTrx'),
+				$this->post('idPengiriman'),
+				$this->post('activity')
 			);
 		}
 

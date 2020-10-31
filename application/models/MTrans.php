@@ -1031,7 +1031,7 @@ class MTrans extends CI_Model
 
     }
 
-    public function getIdTrxByUser($name, $date){
+    public function getTrxByUser($name, $date){
 
         if(empty($name) || empty($date) ){
 
@@ -1047,7 +1047,7 @@ class MTrans extends CI_Model
                 "a.trx_created_date" => $date
             );
 
-            $this->db->select('a.id_trx, a.trx_created_date as trx_date, b.firstname as customer_name, b.phone, b.address, d.nama_produk');
+            $this->db->select('a.id_trx, a.id_pengiriman, a.trx_created_date as trx_date, b.firstname as customer_name, b.phone, b.address, d.nama_produk');
             $this->db->from('pesanan a');
             $this->db->join('users_metadata b', 'a.user_id = b.user_id', 'left');
             $this->db->join('cart c', 'a.id_cart = c.id', 'left');
@@ -1067,6 +1067,42 @@ class MTrans extends CI_Model
 
             return $response;
         }
+
+    }
+
+    public function updateOrderTrack($idTrx, $idKirim, $activity)
+    {
+
+        $response = null;
+
+        if ($idTrx != "" && $idKirim != "" && $activity != "") {
+
+            $currentTime = date("Y-m-d	H:i:s");
+
+            $data = array(
+                'id_trx' => $idTrx,
+                'id_pengiriman' => $idKirim,
+                'activity' => $activity,
+                'activity_date' => $currentTime
+            );
+
+            $execute = $this->db->insert('order_tracking', $data);
+
+            if ($execute) {
+                $response['status'] = 200;
+                $response['error'] = false;
+                $response['message'] = 'Data updated';
+            } else {
+                $response['status'] = 501;
+                $response['error'] = true;
+                $response['message'] = 'Failed update data';
+            }
+
+        } else {
+            $response = $this->empty_response();
+        }
+
+        return $response;
 
     }
 
