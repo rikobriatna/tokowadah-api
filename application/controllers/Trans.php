@@ -307,6 +307,26 @@ class Trans extends REST_Controller{
 		$this->response($response);
 	}
 
+	public function updatePengiriman_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MTrans->updatePengiriman(
+				$this->post('idTrx'),
+				$this->post('kurir'),
+				$this->post('noResi'),
+				$this->post('ongkir'),
+				$this->post('durasi'),
+				$this->post('gambar')
+			);
+		}
+
+		$this->response($response);
+	}
+
 }
 
 ?>

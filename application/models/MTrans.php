@@ -983,6 +983,54 @@ class MTrans extends CI_Model
 
     }
 
+    public function updatePengiriman($idTrx, $kurir, $noResi, $ongkir, $durasi, $gambar)
+    {
+
+        $response = null;
+
+        if ($idTrx != "" && $kurir != "" && $noResi != "" && $ongkir != "" && $durasi != "") {
+
+            $currentTime = date("Y-m-d	H:i:s");
+
+            $data = array(
+                'nama_pengirim' => $kurir,
+                'no_resi' => $noResi,
+                'ongkir' => $ongkir,
+                'durasi' => $durasi,
+                'gambar' => $gambar
+            );
+
+            $execute = $this->db->insert('pengiriman', $data);
+
+            $id = $this->db->insert_id();
+
+            $where = array(
+                "id_trx" => $idTrx
+            );
+            $data = array(
+                'id_pengiriman' => $id
+            );
+            $execute = $this->db->update('pesanan', $data, $where);
+            $execute = $this->db->update('order_tracking', $data, $where);
+
+            if ($execute) {
+                $response['status'] = 200;
+                $response['error'] = false;
+                $response['message'] = 'Data updated';
+            } else {
+                $response['status'] = 501;
+                $response['error'] = true;
+                $response['message'] = 'Failed update data';
+            }
+
+        } else {
+            $response = $this->empty_response();
+        }
+
+        return $response;
+
+    }
+
 }
 
 ?>
