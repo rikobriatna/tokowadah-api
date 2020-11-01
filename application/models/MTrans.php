@@ -753,11 +753,11 @@ class MTrans extends CI_Model
                 $execute = $this->db->insert('order_tracking', $data);
 
                 //update no_invoice
-				$noInvoice = $this->generateNoInvoice();
-				$data = array(
-					"no_invoice" => $noInvoice
-				);
-				$execute = $this->db->update('pembayaran', $data, $where);
+                $noInvoice = $this->generateNoInvoice();
+                $data = array(
+                    "no_invoice" => $noInvoice
+                );
+                $execute = $this->db->update('pembayaran', $data, $where);
 
                 if ($execute) {
                     $response['status'] = 200;
@@ -954,12 +954,12 @@ class MTrans extends CI_Model
 
         $this->db->select('no_invoice');
         $this->db->from('pembayaran');
-		$this->db->order_by("no_invoice", "DESC");
-		$this->db->limit(1);
+        $this->db->order_by("no_invoice", "DESC");
+        $this->db->limit(1);
         $query = $this->db->get();
         $results = $query->result();
         $resultsArray = $query->result_array();
-		$_noInv = "";
+        $_noInv = "";
 
         if ($results) {
 
@@ -968,16 +968,16 @@ class MTrans extends CI_Model
             }
         }
 
-        if($_noInv == ""){
-        	$_noInv = "0/INV-TN/II/2020";
-		}
+        if ($_noInv == "") {
+            $_noInv = "0/INV-TN/II/2020";
+        }
 
-		$arrInv = explode("/", $_noInv);
+        $arrInv = explode("/", $_noInv);
 
         $noInv = $arrInv[0];
         $noInv = $noInv + 1;
 
-        $noInvoice = $noInv."/".$arrInv[1]."/".$arrInv[2]."/".date("Y");
+        $noInvoice = $noInv . "/" . $arrInv[1] . "/" . $arrInv[2] . "/" . date("Y");
 
         return $noInvoice;
 
@@ -1031,13 +1031,14 @@ class MTrans extends CI_Model
 
     }
 
-    public function getTrxByUser($name, $date){
+    public function getTrxByUser($name, $date)
+    {
 
-        if(empty($name) || empty($date) ){
+        if (empty($name) || empty($date)) {
 
             return $this->empty_response();
 
-        } else{
+        } else {
 
             $name = strtolower($name);
 
@@ -1055,14 +1056,14 @@ class MTrans extends CI_Model
             $this->db->like($where);
             $query = $this->db->get();
 
-            if($query->result()){
-                $response['status']=200;
-                $response['error']=false;
-                $response['data']=$query->result();
-            } else{
-                $response['status']=501;
-                $response['error']=true;
-                $response['data']='Failed get data';
+            if ($query->result()) {
+                $response['status'] = 200;
+                $response['error'] = false;
+                $response['data'] = $query->result();
+            } else {
+                $response['status'] = 501;
+                $response['error'] = true;
+                $response['data'] = 'Failed get data';
             }
 
             return $response;
@@ -1070,14 +1071,16 @@ class MTrans extends CI_Model
 
     }
 
-    public function updateOrderTrack($idTrx, $idKirim, $activity)
+    public function updateOrderTrack($idTrx, $activity)
     {
 
         $response = null;
 
-        if ($idTrx != "" && $idKirim != "" && $activity != "") {
+        if ($idTrx != "" && $activity != "") {
 
             $currentTime = date("Y-m-d	H:i:s");
+
+            $idKirim = $this->getIdKirimByTrx($idTrx);
 
             $data = array(
                 'id_trx' => $idTrx,
@@ -1104,6 +1107,90 @@ class MTrans extends CI_Model
 
         return $response;
 
+    }
+
+    public function finishOrder($idTrx)
+    {
+
+        $response = null;
+
+        if ($idTrx != "") {
+
+            $currentTime = date("Y-m-d	H:i:s");
+
+            $where = array(
+                "id_trx" => $idTrx
+            );
+
+            $data = array(
+                'status' => '6'
+            );
+
+            $execute = $this->db->update('pesanan', $data, $where);
+
+            $where = array(
+                "id_trx" => $idTrx
+            );
+
+            $this->db->select('id_cart');
+            $this->db->from('pesanan');
+            $this->db->where($where);
+            $query = $this->db->get();
+            $resultsArray = $query->result_array();
+
+            foreach ($resultsArray as $result) {
+                $idCart = $result['id_cart'];
+            }
+
+            $where = array(
+                "id" => $idCart
+            );
+
+            $data = array(
+                'status' => '3'
+            );
+
+            $execute = $this->db->update('cart', $data, $where);
+
+            $this->updateOrderTrack($idTrx, "Order Selesai");
+
+            if ($execute) {
+                $response['status'] = 200;
+                $response['error'] = false;
+                $response['message'] = 'Data updated';
+            } else {
+                $response['status'] = 501;
+                $response['error'] = true;
+                $response['message'] = 'Failed update data';
+            }
+
+        } else {
+            $response = $this->empty_response();
+        }
+
+        return $response;
+
+    }
+
+    public function getIdKirimByTrx($idTrx){
+
+        $idKirim = "";
+
+        $where = array(
+            "id_trx" => $idTrx
+        );
+
+        $this->db->select('id_pengiriman');
+        $this->db->from('pesanan');
+        $this->db->where($where);
+        $query = $this->db->get();
+        $resultsArray = $query->result_array();
+
+        foreach ($resultsArray as $result) {
+            $idKirim = $result['id_pengiriman'];
+        }
+
+        return $idKirim;
     }
 
 }
