@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
+    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="join mitra">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utils.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/MUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/notif/v_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/notif/v_test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +106,7 @@
       <workItem from="1604143907177" duration="499000" />
       <workItem from="1604213959949" duration="7359000" />
       <workItem from="1604998609306" duration="59000" />
-      <workItem from="1605364119206" duration="3421000" />
+      <workItem from="1605364119206" duration="3621000" />
     </task>
     <task id="LOCAL-00001" summary="test git first commit">
       <created>1598449524772</created>
@@ -419,14 +416,20 @@
       <option name="project" value="LOCAL" />
       <updated>1604219938102</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="join mitra">
+      <created>1605368160969</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1605368160969</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit user" />
     <MESSAGE value="invoice dan tambah assets" />
     <MESSAGE value="search" />
     <MESSAGE value="add email, setting db, base_url" />
@@ -451,21 +454,22 @@
     <MESSAGE value="update getTrxByUser, add update track order api" />
     <MESSAGE value="update track order patch, add finishOrder api" />
     <MESSAGE value="email test view" />
-    <option name="LAST_COMMIT_MESSAGE" value="email test view" />
+    <MESSAGE value="join mitra" />
+    <option name="LAST_COMMIT_MESSAGE" value="join mitra" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603702491351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1604219937315">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1605368324914">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604219937315" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1604219939646">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1605368324914" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1605368163272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604219939646" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605368163272" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1603777743192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

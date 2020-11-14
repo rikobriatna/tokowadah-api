@@ -371,6 +371,123 @@ class MUser extends CI_Model
         return $response;
 
     }
+
+    public function registerMitra($userIdMitra, $email, $password, $firstName, $lastName, $phone, $address,
+                                  $sosmedIG, $sosmedFB, $bidangBisnis, $namaToko, $namaPerusahaan, $imageToko)
+    {
+        $response = null;
+
+        if ($userIdMitra != "" && $email != "" && $password != "" && $firstName != "" && $phone != "" && $namaToko != "") {
+
+            $currentTime = date("Y-m-d H:i:s");
+            $password = md5($password);
+
+            $data = array(
+                'uuid_mitra' => $userIdMitra,
+                'email' => $email,
+                'password' => $password,
+                'status_akun' => "1",
+                'roles' => "0",
+                'created_at' => $currentTime
+            );
+
+            //insert into table users
+            $execute = $this->db->insert('mitra', $data);
+
+            if ($execute) {
+
+                $id = $this->db->insert_id();
+
+                $data = array(
+                    'user_id_mitra' => $userIdMitra,
+                    'nama_toko' => $namaToko,
+                    'nama_perusahaan' => $namaPerusahaan,
+                    'bidang_bisnis' => $bidangBisnis,
+                    'firstname_pic' => $firstName,
+                    'lastname_pic' => $lastName,
+                    'no_hp_pic' => $phone,
+                    'alamat_pic' => $address,
+                    'instagram' => $sosmedIG,
+                    'facebook' => $sosmedFB,
+                    'profil_pic' => $imageToko
+                );
+
+                //insert into table users
+                $execute = $this->db->insert('mitra_metadata', $data);
+
+                if ($execute) {
+
+                    $imgName = "";
+
+                    if ($imageToko != "") {
+                        if (preg_match('/^data:image\/(\w+);base64,/', $imageToko, $type)) {
+                            $data = substr($imageToko, strpos($imageToko, ',') + 1);
+                            $type = strtolower($type[1]); // jpg, png, gif
+
+                            if (!in_array($type, array('jpg', 'jpeg', 'gif', 'png'))) {
+                                $response['status'] = 303;
+                                $response['error'] = true;
+                                $response['message'] = 'invalid image type';
+                                throw new \Exception('invalid image type');
+                            }
+
+                            $data = base64_decode($data);
+
+                            if ($data === false) {
+                                $response['status'] = 304;
+                                $response['error'] = true;
+                                $response['message'] = 'base64_decode failed';
+                                throw new \Exception('base64_decode failed');
+                            }
+                        } else {
+                            $response['status'] = 305;
+                            $response['error'] = true;
+                            $response['message'] = 'did not match data URI with image data';
+                            throw new \Exception('did not match data URI with image data');
+                        }
+                        $userId_ = str_replace("-", "", $userIdMitra);
+                        $imgName = $userId_ . ".{$type}";
+                        $path = "upload/mitra/" . $imgName;
+
+                        write_file($path, $data);
+
+                    } else {
+                        $imgName = "profile.png";
+                    }
+
+                    $data = array(
+                        'profil_pic' => $imgName
+                    );
+
+                    $where = array(
+                        "user_id_mitra" => $userIdMitra
+                    );
+
+                    //update profile image
+                    $this->db->update('mitra_metadata', $data, $where);
+
+                    $response['status'] = 200;
+                    $response['error'] = false;
+                    $response['message'] = 'Data inserted';
+
+                } else {
+                    $response['status'] = 501;
+                    $response['error'] = true;
+                    $response['message'] = 'Failed insert data';
+                }
+            } else {
+                $response['status'] = 502;
+                $response['error'] = false;
+                $response['message'] = 'Failed insert data';
+            }
+
+        } else {
+            $response = $this->empty_response();
+        }
+
+        return $response;
+
+    }
 }
 
 ?>
