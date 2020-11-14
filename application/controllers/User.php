@@ -99,6 +99,34 @@ class User extends REST_Controller{
 		$this->response($response);
 
 	}
+
+	public function registerMitra_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MUser->registerMitra(
+				$this->post('userIdMitra'),
+				$this->post('email'),
+				$this->post('password'),
+				$this->post('firstName'),
+				$this->post('lastName'),
+				$this->post('phone'),
+				$this->post('address'),
+				$this->post('sosmedIG'),
+				$this->post('sosmedFB'),
+				$this->post('bidangBisnis'),
+				$this->post('namaToko'),
+				$this->post('namaPerusahaan'),
+				$this->post('imageToko')
+			);
+		}
+
+		$this->response($response);
+
+	}
   
 }
 
