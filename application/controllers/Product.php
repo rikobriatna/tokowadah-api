@@ -124,6 +124,33 @@ class Product extends REST_Controller{
 
 		$this->response($response);
 	}
+
+	public function requestProduct_post(){
+
+		$auth = $this->authenticate($this->post('apiKey'));
+
+		if($auth["status"] != 200){
+			$response = $auth;
+		} else {
+			$response = $this->MProduct->requestProduct(
+				$this->post('name'),
+				$this->post('email'),
+				$this->post('phone'),
+				$this->post('address'),
+				$this->post('productName'),
+				$this->post('productAmount'),
+				$this->post('budget'),
+				$this->post('ongkir'),
+				$this->post('imageProduct1'),
+				$this->post('imageProduct2'),
+				$this->post('imageProduct3'),
+				$this->post('imageProduct4')
+			);
+		}
+
+		$this->response($response);
+
+	}
   
 }
 
