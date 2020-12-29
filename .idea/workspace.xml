@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/MTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MTrans.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/notif/v_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/notif/v_test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,21 +111,7 @@
       <workItem from="1605364119206" duration="3621000" />
       <workItem from="1605368334029" duration="647000" />
       <workItem from="1607574403905" duration="6716000" />
-      <workItem from="1609245745889" duration="1727000" />
-    </task>
-    <task id="LOCAL-00001" summary="test git first commit">
-      <created>1598449524772</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1598449524772</updated>
-    </task>
-    <task id="LOCAL-00002" summary="getPaymentData">
-      <created>1598459005222</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1598459005222</updated>
+      <workItem from="1609245745889" duration="5455000" />
     </task>
     <task id="LOCAL-00003" summary="upload payment receipt">
       <created>1599144642496</created>
@@ -453,7 +442,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609246862144</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="test layout email1 kirim">
+      <created>1609247566241</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1609247566242</updated>
+    </task>
+    <task id="LOCAL-00051" summary="test layout email1 kirim">
+      <created>1609247686226</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1609247686226</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,14 +495,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609247565165">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609247685281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609247565165" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609247567632">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609247685281" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609247687551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609247567632" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609247687551" />
+    <state x="580" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609252352861">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="580" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1609252352861" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1603777743192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -514,7 +521,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/controllers/Utils.php</url>
-          <line>19</line>
+          <line>21</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

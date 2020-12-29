@@ -334,6 +334,16 @@
     </div>
     <div style="max-width: 600px; margin: 0 auto;" class="email-container">
         <!-- BEGIN BODY -->
+        <?php
+        $createDate = null;
+        $totalHarga = null;
+        $metodeBayar = null;
+        foreach ($data as $row) {
+            $createDate = $row->trx_created_date;
+            $totalHarga = $row->total_harga;
+            $metodeBayar = $row->metode;
+        }
+        ?>
         <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
                style="margin: auto;">
             <tr>
@@ -356,7 +366,7 @@
                             <td style="padding: 0 2.5em; text-align: left;">
                                 <div class="text">
                                     <h2>Mohon segera selesaikan pembayaran Anda</h2>
-                                    <h3>Checkout berhasil pada tanggal 29-12-2020 19:49</h3>
+                                    <h3>Checkout berhasil pada tanggal <?php echo $createDate; ?> </h3>
                                 </div>
                             </td>
                         </tr>
@@ -376,32 +386,46 @@
                         </tr>
                         <tr>
                             <td style="padding: 0 2.5em; text-align: left;">
-                                <h3> Rp 1.000 </h3>
+                                <h3> <?php echo "Rp. " . number_format($totalHarga, 0, ',', '.'); ?> </h3>
                             </td>
                             <td style="padding: 0 2.5em; text-align: left;">
-                                <h3> Transfer Bank BCA </h3>
+                                <h3> <?php echo $metodeBayar; ?> </h3>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr><!-- end tr -->
             <tr>
+                <td valign="middle" class="hero bg_white" style="padding: 1em 0 0 2.5em;">
+                    <h4><b> Detail Order </b></h4>
+                </td>
+            </tr>
+            <tr>
                 <td class="bg_white" style="padding: 0 0 4em 0;">
                     <table class="bg_white" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                        <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
-                            <td valign="middle" width="70%" style="text-align:left; padding: 0 2.5em;">
-                                <div class="product-entry">
-                                    <img src="images/product-1.jpg" alt=""
-                                         style="width: 100px; max-width: 600px; height: auto; margin-bottom: 20px; display: block;">
-                                    <div class="text">
-                                        <h3>Diesel Engine Kubota D722</h3>
+                        <?php
+                        foreach ($data as $row) {
+                            $baseUrlImage = "https://api.tokowadah.com/upload/product";
+                            $imageUrl = $baseUrlImage . $row->gambar;
+                            ?>
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
+                                <td valign="middle" width="70%" style="text-align:left; padding: 0 2.5em;">
+                                    <div class="product-entry">
+                                        <img src="<?php echo $imageUrl; ?>" alt=""
+                                             style="width: 100px; max-width: 600px; height: auto; margin-bottom: 20px; display: block;">
+                                        <div class="text">
+                                            <h3> <?php echo $row->nama_produk; ?> </h3>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td valign="middle" width="30%" style="text-align:center; padding-right: 2.5em;">
-                                <span class="price" style="color: #f34949; font-size: 20px; display: block;">Rp. 1000</span>
-                            </td>
-                        </tr>
+                                </td>
+                                <td valign="middle" width="30%" style="text-align:center; padding-right: 2.5em;">
+                                <span class="price"
+                                      style="color: #f34949; font-size: 20px; display: block;"> <?php echo "Rp. " . number_format($row->harga, 0, ',', '.'); ?> </span>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
                     </table>
                 </td>
             </tr><!-- end tr -->
@@ -418,7 +442,9 @@
                                     <tr>
                                         <td style="text-align: left; padding-right: 10px;">
                                             <h3 class="heading">Tentang Kita</h3>
-                                            <p>Tokowadah merupakan situs bisnis online B2B alat industrial untuk pengadaan dan penjualan material atau suku cadang yang berkonsentrasi saat ini pada bidang pengeboran dan konstruksi</p>
+                                            <p>Tokowadah merupakan situs bisnis online B2B alat industrial untuk
+                                                pengadaan dan penjualan material atau suku cadang yang berkonsentrasi
+                                                saat ini pada bidang pengeboran dan konstruksi</p>
                                         </td>
                                     </tr>
                                 </table>
@@ -442,12 +468,6 @@
                     </table>
                 </td>
             </tr><!-- end: tr -->
-            <tr>
-                <td class="bg_white" style="text-align: center;">
-                    <p>No longer want to receive these email? You can <a href="#" style="color: rgba(0,0,0,.8);">Unsubscribe
-                            here</a></p>
-                </td>
-            </tr>
         </table>
 
     </div>

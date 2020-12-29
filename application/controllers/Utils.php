@@ -11,11 +11,12 @@ class Utils extends CI_Controller
         $this->load->model('MTrans');
     }
 
-    public function kirimEmail()
+    public function kirimEmail($idTrx)
     {
-//        $result['data'] = $this->MTrans->getInvoice("2");
-//        $this->load->view('notif/v_test');
-        $msg = $this->load->view('notif/v_test', null, true);
+        $result['data'] = $this->MTrans->getDetailMyOrderEmail($idTrx);
+//        var_dump($result);
+//        $msg = $this->load->view('notif/v_test', $result);
+        $msg = $this->load->view('notif/v_test', $result, true);
         $msg = "test aja";
         $from = "info@tokowadah.com";
         $to = "rikobriatna01@gmail.com";
