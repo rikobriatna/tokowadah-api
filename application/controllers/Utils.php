@@ -17,7 +17,6 @@ class Utils extends CI_Controller
 //        var_dump($result);
 //        $msg = $this->load->view('notif/v_test', $result);
         $msg = $this->load->view('notif/v_test', $result, true);
-        $msg = "test aja";
         $from = "info@tokowadah.com";
         $to = "rikobriatna01@gmail.com";
         $subject = "Checking PHP mail";
