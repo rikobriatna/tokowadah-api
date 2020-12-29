@@ -11,15 +11,14 @@ class Utils extends CI_Controller
         $this->load->model('MTrans');
     }
 
-    public function kirimEmail($idTrx)
+    public function kirimEmail($email, $idTrx, $sequence)
     {
         $result['data'] = $this->MTrans->getDetailMyOrderEmail($idTrx);
-//        var_dump($result);
 //        $msg = $this->load->view('notif/v_test', $result);
         $msg = $this->load->view('notif/v_test', $result, true);
         $from = "info@tokowadah.com";
-        $to = "rikobriatna01@gmail.com";
-        $subject = "Checking PHP mail";
+        $to = $email;
+        $subject = $this->getSubjectBySequence($sequence);
         $message = $msg;
 //        $headers = "From:" . $from;
         // Always set content-type when sending HTML email
@@ -30,5 +29,21 @@ class Utils extends CI_Controller
         mail($to, $subject, $message, $headers);
         echo "Pesan email sudah terkirim.";
 
+    }
+
+    private function getSubjectBySequence($sequence){
+        $subject = "";
+        if($sequence == "1"){
+            $subject = "Menunggu Pembayaran";
+        } elseif($sequence == "2"){
+            $subject = "Pembayaran terverifikasi";
+        } elseif($sequence == "3"){
+            $subject = "Pesanan dikirim";
+        } elseif($sequence == "4"){
+            $subject = "Konfirmasi pesanan telah diterima";
+        } else {
+            $subject = "Pesanan selesai";
+        }
+        return $subject;
     }
 }
