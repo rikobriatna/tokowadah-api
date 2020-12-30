@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="rest kirim email">
+    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Welcome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/MTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MTrans.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,14 +110,7 @@
       <workItem from="1607574403905" duration="6716000" />
       <workItem from="1609245745889" duration="8246000" />
       <workItem from="1609303209140" duration="3741000" />
-      <workItem from="1609314477344" duration="569000" />
-    </task>
-    <task id="LOCAL-00011" summary="edit user">
-      <created>1601689823759</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1601689823760</updated>
+      <workItem from="1609314477344" duration="1249000" />
     </task>
     <task id="LOCAL-00012" summary="invoice dan tambah assets">
       <created>1603373364988</created>
@@ -457,14 +448,20 @@
       <option name="project" value="LOCAL" />
       <updated>1609307494097</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="remove group by id_trx in detail order">
+      <created>1609315119917</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1609315119919</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="total_diskon fixing" />
     <MESSAGE value="add update status pesanan setelah upload receipt" />
     <MESSAGE value="insert order add order tracking" />
     <MESSAGE value="generate no_invoice, add order tracking" />
@@ -489,21 +486,22 @@
     <MESSAGE value="test layout email1" />
     <MESSAGE value="test layout email1 kirim" />
     <MESSAGE value="rest kirim email" />
-    <option name="LAST_COMMIT_MESSAGE" value="rest kirim email" />
+    <MESSAGE value="remove group by id_trx in detail order" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove group by id_trx in detail order" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603702491351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609307575790">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609315118082">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609307575790" />
-    <state x="444" y="283" key="Vcs.Push.Dialog.v2" timestamp="1609307495393">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609315118082" />
+    <state x="444" y="283" key="Vcs.Push.Dialog.v2" timestamp="1609315121961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="444" y="283" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609307495393" />
+    <state x="444" y="283" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609315121961" />
     <state x="580" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609252352861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
