@@ -4,8 +4,7 @@
     <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/MTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MTrans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/notif/v_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/notif/v_email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/notif/v_email.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/notif/v_email.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,14 +111,7 @@
       <workItem from="1605368334029" duration="647000" />
       <workItem from="1607574403905" duration="6716000" />
       <workItem from="1609245745889" duration="8246000" />
-      <workItem from="1609303209140" duration="2446000" />
-    </task>
-    <task id="LOCAL-00009" summary="register user">
-      <created>1601624755279</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1601624755279</updated>
+      <workItem from="1609303209140" duration="3554000" />
     </task>
     <task id="LOCAL-00010" summary="register user upload image">
       <created>1601631723308</created>
@@ -457,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609303962966</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="test layout email1 kirim">
+      <created>1609306478285</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1609306478285</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,14 +495,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609303962102">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609306477100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609303962102" />
-    <state x="444" y="283" key="Vcs.Push.Dialog.v2" timestamp="1609303964842">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609306477100" />
+    <state x="444" y="283" key="Vcs.Push.Dialog.v2" timestamp="1609306479658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="444" y="283" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609303964842" />
+    <state x="444" y="283" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609306479658" />
     <state x="580" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609252352861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

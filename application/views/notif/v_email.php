@@ -360,6 +360,9 @@
         } elseif($sequence == "5"){ //selesai
             $judul = "Pesanan telah selesai";
             $detail = "Terima kasih ya, Kami tunggu order berikutnya";
+        } else {
+            $judul = "";
+            $detail = "";
         }
         ?>
         <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
