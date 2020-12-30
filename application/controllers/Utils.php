@@ -17,7 +17,7 @@ class Utils extends CI_Controller
 //        $msg = $this->load->view('notif/v_test', $result);
         $msg = $this->load->view('notif/v_test', $result, true);
         $from = "info@tokowadah.com";
-        $to = $email;
+        $to = "rikobriatna01@gmail.com";
         $subject = $this->getSubjectBySequence($sequence);
         $message = $msg;
 //        $headers = "From:" . $from;
