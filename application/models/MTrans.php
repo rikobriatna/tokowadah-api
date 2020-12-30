@@ -862,7 +862,7 @@ class MTrans extends CI_Model
         $this->db->join('produk d', 'c.id_produk = d.id_produk', 'left');
         $this->db->join('detailproduk e', 'd.id_produk = e.id', 'left');
         $this->db->where($where);
-        $this->db->group_by("p.id_trx");
+//        $this->db->group_by("p.id_trx");
         $this->db->order_by("p.trx_updated_date", "DESC");
         $query = $this->db->get();
 
@@ -1215,7 +1215,7 @@ class MTrans extends CI_Model
         $this->db->join('produk d', 'c.id_produk = d.id_produk', 'left');
         $this->db->join('detailproduk e', 'd.id_produk = e.id', 'left');
         $this->db->where($where);
-        $this->db->group_by("p.id_trx");
+//        $this->db->group_by("p.id_trx");
         $this->db->order_by("p.trx_updated_date", "DESC");
         $query = $this->db->get();
 

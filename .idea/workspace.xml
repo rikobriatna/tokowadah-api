@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="">
+    <list default="true" id="6257ce1c-b660-4b57-aa48-64fe5ab79855" name="Default Changelist" comment="rest kirim email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/notif/v_email.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/notif/v_email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/MTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MTrans.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,14 +111,8 @@
       <workItem from="1605368334029" duration="647000" />
       <workItem from="1607574403905" duration="6716000" />
       <workItem from="1609245745889" duration="8246000" />
-      <workItem from="1609303209140" duration="3554000" />
-    </task>
-    <task id="LOCAL-00010" summary="register user upload image">
-      <created>1601631723308</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1601631723309</updated>
+      <workItem from="1609303209140" duration="3741000" />
+      <workItem from="1609314477344" duration="569000" />
     </task>
     <task id="LOCAL-00011" summary="edit user">
       <created>1601689823759</created>
@@ -456,14 +450,20 @@
       <option name="project" value="LOCAL" />
       <updated>1609306478285</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="rest kirim email">
+      <created>1609307494097</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1609307494097</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="left join" />
     <MESSAGE value="total_diskon fixing" />
     <MESSAGE value="add update status pesanan setelah upload receipt" />
     <MESSAGE value="insert order add order tracking" />
@@ -488,21 +488,22 @@
     <MESSAGE value="form permintaan" />
     <MESSAGE value="test layout email1" />
     <MESSAGE value="test layout email1 kirim" />
-    <option name="LAST_COMMIT_MESSAGE" value="test layout email1 kirim" />
+    <MESSAGE value="rest kirim email" />
+    <option name="LAST_COMMIT_MESSAGE" value="rest kirim email" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603702491351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603702491351" />
-    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609306477100">
+    <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1609307575790">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609306477100" />
-    <state x="444" y="283" key="Vcs.Push.Dialog.v2" timestamp="1609306479658">
+    <state x="406" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609307575790" />
+    <state x="444" y="283" key="Vcs.Push.Dialog.v2" timestamp="1609307495393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="444" y="283" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609306479658" />
+    <state x="444" y="283" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609307495393" />
     <state x="580" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609252352861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

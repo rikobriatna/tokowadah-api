@@ -18,8 +18,23 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('MTrans');
+    }
+
 	public function index()
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function viewTemplate($idTrx, $sequence){
+        $result['sequence'] = $sequence;
+        $result['data'] = $this->MTrans->getDetailMyOrderEmail($idTrx);
+        var_dump($result);
+        $email = $this->MTrans->getEmailByTrx($idTrx);
+        $this->load->view('notif/v_email', $result);
+    }
 }
