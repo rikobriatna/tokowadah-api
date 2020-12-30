@@ -338,10 +338,28 @@
         $createDate = null;
         $totalHarga = null;
         $metodeBayar = null;
+        $tglBayar = null;
         foreach ($data as $row) {
             $createDate = $row->trx_created_date;
             $totalHarga = $row->total_harga;
             $metodeBayar = $row->metode;
+            $tglBayar = $row->payment_updated_date;
+        }
+        if($sequence == "1"){ //belum bayar
+            $judul = "Mohon segera selesaikan pembayaran Anda";
+            $detail = "Checkout berhasil pada tanggal ".$createDate;
+        } elseif($sequence == "2"){ //sudah bayar
+            $judul = "Terima kasih pembayaran Anda telah terverifikasi";
+            $detail = "Pembayaran pada tanggal ".$tglBayar;
+        } elseif($sequence == "3"){ //dikirim
+            $judul = "Hore, pesanan Anda sudah dikirim";
+            $detail = "";
+        } elseif($sequence == "4"){ //diterima
+            $judul = "Halo, info dari kurir pesanan telah diterima";
+            $detail = "Pastikan barang telah sesuai dan konfirmasi ya";
+        } elseif($sequence == "5"){ //selesai
+            $judul = "Pesanan telah selesai";
+            $detail = "Terima kasih ya, Kami tunggu order berikutnya";
         }
         ?>
         <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
@@ -365,8 +383,8 @@
                         <tr>
                             <td style="padding: 0 2.5em; text-align: left;">
                                 <div class="text">
-                                    <h2>Mohon segera selesaikan pembayaran Anda</h2>
-                                    <h3>Checkout berhasil pada tanggal <?php echo $createDate; ?> </h3>
+                                    <h2> <?php echo $judul; ?> </h2>
+                                    <h3> <?php echo $detail; ?> </h3>
                                 </div>
                             </td>
                         </tr>

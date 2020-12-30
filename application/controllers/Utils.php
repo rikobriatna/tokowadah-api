@@ -13,19 +13,17 @@ class Utils extends CI_Controller
 
     public function kirimEmail($idTrx, $sequence)
     {
+        $result['sequence'] = $sequence;
         $result['data'] = $this->MTrans->getDetailMyOrderEmail($idTrx);
         $email = $this->MTrans->getEmailByTrx($idTrx);
-//        $msg = $this->load->view('notif/v_test', $result);
-        $msg = $this->load->view('notif/v_test', $result, true);
-        $from = "info@tokowadah.com";
+//        $this->load->view('notif/v_email', $result);
+        $msg = $this->load->view('notif/v_email', $result, true);
         $to = $email;
         $subject = $this->getSubjectBySequence($sequence);
         $message = $msg;
-//        $headers = "From:" . $from;
         // Always set content-type when sending HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-// More headers
         $headers .= 'From: Tokowadah.com <info@tokowadah.com>' . "\r\n";
         mail($to, $subject, $message, $headers);
         echo "Pesan email sudah terkirim.";

@@ -1204,7 +1204,7 @@ class MTrans extends CI_Model
         );
 
         $this->db->select('p.*, d.id_produk, d.nama_produk, e.gambar, c.jml, c.harga, m.metode, b.nominal_bayar, b.no_invoice, b.file_invoice,
-				u.firstname, u.lastname, us.email, u.phone, u.address, n.nama_pengirim, n.no_resi, n.ongkir, n.durasi');
+				b.payment_updated_date, u.firstname, u.lastname, us.email, u.phone, u.address, n.nama_pengirim, n.no_resi, n.ongkir, n.durasi');
         $this->db->from('pesanan p');
         $this->db->join('pembayaran b', 'p.id_trx = b.id_trx', 'left');
         $this->db->join('metode_pembayaran m', 'b.id_metode_bayar = m.id', 'left');
