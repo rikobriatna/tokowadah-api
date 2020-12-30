@@ -26,7 +26,7 @@ class Utils extends CI_Controller
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 // More headers
-        $headers .= 'From: <info@tokowadah.com>' . "\r\n";
+        $headers .= 'From: Tokowadah.com <info@tokowadah.com>' . "\r\n";
         mail($to, $subject, $message, $headers);
         echo "Pesan email sudah terkirim.";
 
