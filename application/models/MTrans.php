@@ -1223,6 +1223,32 @@ class MTrans extends CI_Model
 
     }
 
+    public function getEmailByTrx($idTrx)
+    {
+
+        $email = null;
+
+        $where = array(
+            "p.id_trx" => $idTrx
+        );
+
+        $this->db->select('us.email');
+        $this->db->from('pesanan p');
+        $this->db->join('users us', 'p.user_id = us.uuid', 'left');
+        $this->db->where($where);
+        $this->db->group_by("p.id_trx");
+        $this->db->order_by("p.trx_updated_date", "DESC");
+        $query = $this->db->get();
+        $resultsArray = $query->result_array();
+
+        foreach ($resultsArray as $result) {
+            $email = $result['email'];
+        }
+
+        return $email;
+
+    }
+
 }
 
 ?>

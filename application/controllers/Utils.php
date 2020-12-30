@@ -11,13 +11,14 @@ class Utils extends CI_Controller
         $this->load->model('MTrans');
     }
 
-    public function kirimEmail($email, $idTrx, $sequence)
+    public function kirimEmail($idTrx, $sequence)
     {
         $result['data'] = $this->MTrans->getDetailMyOrderEmail($idTrx);
+        $email = $this->MTrans->getEmailByTrx($idTrx);
 //        $msg = $this->load->view('notif/v_test', $result);
         $msg = $this->load->view('notif/v_test', $result, true);
         $from = "info@tokowadah.com";
-        $to = "rikobriatna01@gmail.com";
+        $to = $email;
         $subject = $this->getSubjectBySequence($sequence);
         $message = $msg;
 //        $headers = "From:" . $from;
